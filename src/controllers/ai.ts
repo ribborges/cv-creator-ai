@@ -7,7 +7,7 @@ const inference = new HfInference(hfToken);
 const model = 'google/gemma-2-2b-it';
 
 async function getData(req: Request, res: Response) {
-    const { dataString } = req.body;
+    const { dataString } = req.query;
 
     const results = await inference.chatCompletion({
         model,
