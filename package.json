@@ -1,16 +1,21 @@
 {
   "name": "cv-creator-ai",
-  "version": "1.0.0",
-  "description": "",
+  "description": "Create your CV/Resume with this simple tool developed using React, TypeScript, Vite, SCSS and ReactPDF",
+  "version": "1.0.2",
   "main": "index.js",
   "type": "module",
+  "license": "MPL-2.0",
+  "repository": "https://github.com/ribborges/cv-creator-ai",
+  "author": {
+    "name": "Richard Borges",
+    "email": "contato@richardborges.dev",
+    "url": "https://richardborges.dev"
+  },
   "scripts": {
     "dev": "tsx watch --env-file .env ./index.ts",
     "build": "tsup src --format esm",
     "start": "node dist/server.js"
   },
-  "author": "",
-  "license": "MPL-2.0",
   "dependencies": {
     "@huggingface/inference": "^3.3.6",
     "cookie-parser": "^1.4.7",
