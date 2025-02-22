@@ -87,8 +87,17 @@ async function getData(req: Request, res: Response) {
         return;
     }
 
-    res.json({ data: results.choices[0].message.content });
-    return;
+    const converted = results.choices[0].message.content;
+
+    const formatted = converted?.split(/```json|```/)[1];
+    if (formatted) {
+        const toJson = JSON.parse(formatted);
+        res.json({ data: toJson });
+        return;
+    } else {
+        res.status(400).json({ message: 'Failed to format the converted text' });
+        return;
+    }
 }
 
 export { getData };
